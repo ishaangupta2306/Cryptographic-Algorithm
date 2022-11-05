@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# CodeStream ignored files
+/../../project\.idea/codestream.xml
+# Datasource local storage ignored files
+/../../../../../:\Fall 2022\CSDS 344\project\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
