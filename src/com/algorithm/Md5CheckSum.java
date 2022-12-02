@@ -1,14 +1,18 @@
 package com.algorithm;
 
+/**
+ * @author Ishaan Gupta
+ */
 public class Md5CheckSum {
 
+    //Some constants for the algorithm
     private static final int buffer_A = 0x67452301;
     private static final int buffer_B = (int)0xEFCDAB89L;
     private static final int buffer_C = (int)0x98BADCFEL;
     private static final int buffer_D = 0x10325476;
     private static final int[] table = new int[64];
 
-
+    //Processing done before algorithm
     private static byte[] preprocessing(byte[] message, int totalLen){
         int k = 0;
         while(k < table.length){
@@ -28,8 +32,7 @@ public class Md5CheckSum {
         return paddingBytes;
     }
 
-
-
+    //Processing done after algorithm
     private static byte[] postProcessing(int a, int b, int c, int d){
         byte[] result = new byte[16];
         int count = 0;
@@ -98,11 +101,11 @@ public class Md5CheckSum {
         return postProcessing(a, b, c, d);
     }
 
-    public static void main(String[] args)
-    {
-        String[] testStrings = { "", "a", "abc", "message digest", "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "12345678901234567890123456789012345678901234567890123456789012345678901234567890" };
-        for (String s : testStrings)
-            System.out.println("0x" + CheckSumUtil.toHexString(computeMD5(s.getBytes())) + " <== \"" + s + "\"");
-        return;
+    //Accepts string to compute the MD5Checksum hash using helper methods
+    public static String executeMD5CheckSum(String st){
+        byte[] b = st.getBytes();
+        byte[] modifiedByteArray =  computeMD5(b);
+        String stt = CheckSumUtil.toHexString(modifiedByteArray);
+        return "0x" + stt;
     }
 }

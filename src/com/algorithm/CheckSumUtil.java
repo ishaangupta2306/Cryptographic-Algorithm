@@ -1,6 +1,7 @@
 package com.algorithm;
 
 public class CheckSumUtil {
+    //Array of shift by
     private static final int[] shift = {
             7, 12, 17, 22,
             5,  9, 14, 20,
@@ -8,6 +9,7 @@ public class CheckSumUtil {
             6, 10, 15, 21
     };
 
+    //Takes in the byte array and return Hexadecimal string
     protected static String toHexString(byte[] b){
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < b.length; i++) {
